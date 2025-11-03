@@ -24,6 +24,7 @@ import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import Image from "next/image";
 
 const signupSchema = z
   .object({
@@ -54,20 +55,22 @@ export function SignupForm({
   });
 
   const onSubmit = async (values: signupFormValues) => {
-    await authClient.signUp.email({
-      name: values.email,
-      email: values.email,
-      password: values.password,
-      callbackURL: "/"
-    },
-  {
-    onSuccess: () => {
-      router.push("/");
-    },
-    onError: (ctx) => {
-      toast.error(ctx.error.message);
-    },
-  });
+    await authClient.signUp.email(
+      {
+        name: values.email,
+        email: values.email,
+        password: values.password,
+        callbackURL: "/",
+      },
+      {
+        onSuccess: () => {
+          router.push("/");
+        },
+        onError: (ctx) => {
+          toast.error(ctx.error.message);
+        },
+      }
+    );
   };
 
   const isPending = form.formState.isSubmitting;
@@ -151,12 +154,39 @@ export function SignupForm({
 
               <Field>
                 <Button type="submit">Register</Button>
-                <Button variant="outline" type="button" disabled={isPending}>
-                  Google Signup
-                </Button>
-                <Button variant="outline" type="button" disabled={isPending}>
-                  Github Signup
-                </Button>
+                <div className="flex items-center gap-2 w-full">
+                  <div className="flex-1 h-px bg-muted" />
+                  <span className="text-sm text-muted-foreground">or</span>
+                  <div className="flex-1 h-px bg-muted" />
+                </div>
+                <div className="flex flex-row flex-wrap gap-2  w-full">
+                  <Button
+                    variant="outline"
+                    type="button"
+                    disabled={isPending}
+                    className="w-full flex-1"
+                  >
+                    <Image
+                      src="/logos/google.svg"
+                      alt="Google"
+                      width={20}
+                      height={20}
+                    />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    type="button"
+                    disabled={isPending}
+                    className="w-full flex-1"
+                  >
+                    <Image
+                      src="/logos/github.svg"
+                      alt="Github"
+                      width={20}
+                      height={20}
+                    />
+                  </Button>
+                </div>
                 <FieldDescription className="text-center">
                   Already have an account? <Link href="/login">Login</Link>
                 </FieldDescription>

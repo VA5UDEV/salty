@@ -24,6 +24,7 @@ import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import Image from "next/image";
 
 const loginSchema = z.object({
   email: z.email("Please enter a valid email address"),
@@ -47,19 +48,21 @@ export function LoginForm({
   });
 
   const onSubmit = async (value: LoginFormValues) => {
-    await authClient.signIn.email({
-      email: value.email,
-      password: value.password,
-      callbackURL: "/",
-    },
-    {
-      onSuccess: () => {
-        router.push("/");
+    await authClient.signIn.email(
+      {
+        email: value.email,
+        password: value.password,
+        callbackURL: "/",
       },
-      onError: (ctx) => {
-        toast.error(ctx.error.message);
-      },
-    });
+      {
+        onSuccess: () => {
+          router.push("/");
+        },
+        onError: (ctx) => {
+          toast.error(ctx.error.message);
+        },
+      }
+    );
   };
 
   const isPending = form.formState.isSubmitting;
@@ -74,7 +77,11 @@ export function LoginForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form id="sign-in-form" noValidate onSubmit={form.handleSubmit(onSubmit)}>
+          <form
+            id="sign-in-form"
+            noValidate
+            onSubmit={form.handleSubmit(onSubmit)}
+          >
             <FieldGroup>
               <Controller
                 control={form.control}
@@ -124,14 +131,42 @@ export function LoginForm({
 
               <Field>
                 <Button type="submit">Login</Button>
-                <Button variant="outline" type="button" disabled={isPending}>
-                  Login with Google
-                </Button>
-                <Button variant="outline" type="button" disabled={isPending}>
-                  Login with Github
-                </Button>
+                <div className="flex items-center gap-2 w-full">
+                  <div className="flex-1 h-px bg-muted" />
+                  <span className="text-sm text-muted-foreground">or</span>
+                  <div className="flex-1 h-px bg-muted" />
+                </div>
+                <div className="flex flex-row flex-wrap gap-2  w-full">
+                  <Button
+                    variant="outline"
+                    type="button"
+                    disabled={isPending}
+                    className="w-full flex-1"
+                  >
+                    <Image
+                      src="/logos/google.svg"
+                      alt="Google"
+                      width={20}
+                      height={20}
+                    />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    type="button"
+                    disabled={isPending}
+                    className="w-full flex-1"
+                  >
+                    <Image
+                      src="/logos/github.svg"
+                      alt="Github"
+                      width={20}
+                      height={20}
+                    />
+                  </Button>
+                </div>
                 <FieldDescription className="text-center">
-                  Don&apos;t have an account? <Link href="/signup">Sign up</Link>
+                  Don&apos;t have an account?{" "}
+                  <Link href="/signup">Sign up</Link>
                 </FieldDescription>
               </Field>
             </FieldGroup>
