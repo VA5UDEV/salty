@@ -1,0 +1,20 @@
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"C:\\Users\\Lenovo\\AppData\\Roaming\\npm\\pnpm dlx inngest:dev\0"` in cwd `Some("C:\\Users\\Lenovo\\Desktop\\nodebase\0")` failed: %1 is not a valid Win32 application. (os error 193)
+ERROR [mprocs::error] Error: channel closed
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"C:\\Users\\Lenovo\\AppData\\Roaming\\npm\\pnpm dlx inngest:dev\0"` in cwd `Some("C:\\Users\\Lenovo\\Desktop\\nodebase\0")` failed: %1 is not a valid Win32 application. (os error 193)
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"C:\\Users\\Lenovo\\AppData\\Roaming\\npm\\pnpm dev\0"` in cwd `Some("C:\\Users\\Lenovo\\Desktop\\nodebase\0")` failed: %1 is not a valid Win32 application. (os error 193)
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"C:\\Users\\Lenovo\\AppData\\Roaming\\npm\\pnpm dlx inngest:dev\0"` in cwd `Some("C:\\Users\\Lenovo\\Desktop\\nodebase\0")` failed: %1 is not a valid Win32 application. (os error 193)
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"C:\\Users\\Lenovo\\AppData\\Roaming\\npm\\pnpm dlx inngest:dev\0"` in cwd `Some("C:\\Users\\Lenovo\\Desktop\\nodebase\0")` failed: %1 is not a valid Win32 application. (os error 193)
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"C:\\Users\\Lenovo\\AppData\\Roaming\\npm\\pnpm dlx inngest:dev\0"` in cwd `Some("C:\\Users\\Lenovo\\Desktop\\nodebase\0")` failed: %1 is not a valid Win32 application. (os error 193)
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"C:\\Users\\Lenovo\\AppData\\Roaming\\npm\\pnpm dlx inngest:dev\0"` in cwd `Some("C:\\Users\\Lenovo\\Desktop\\nodebase\0")` failed: %1 is not a valid Win32 application. (os error 193)
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"C:\\Users\\Lenovo\\AppData\\Roaming\\npm\\pnpm dlx inngest:dev\0"` in cwd `Some("C:\\Users\\Lenovo\\Desktop\\nodebase\0")` failed: %1 is not a valid Win32 application. (os error 193)
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"C:\\Users\\Lenovo\\AppData\\Roaming\\npm\\pnpm dlx inngest:dev\0"` in cwd `Some("C:\\Users\\Lenovo\\Desktop\\nodebase\0")` failed: %1 is not a valid Win32 application. (os error 193)
+WARN [mprocs::app] Ignore input event: FocusLost
+WARN [mprocs::app] Ignore input event: FocusGained
+WARN [mprocs::app] Ignore input event: FocusLost
+WARN [mprocs::app] Ignore input event: FocusGained
+WARN [mprocs::app] Ignore input event: FocusLost
+WARN [mprocs::app] Ignore input event: FocusGained
+WARN [mprocs::app] Ignore input event: FocusLost
+WARN [mprocs::app] Ignore input event: FocusGained
+ERROR [mprocs::error] Error: channel closed
+ERROR [mprocs::error] Error: channel closed
